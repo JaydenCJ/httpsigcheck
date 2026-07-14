@@ -1,0 +1,8 @@
+POST /payments HTTP/1.1
+Host: api.example.test
+Content-Type: application/json
+Content-Digest: sha-256=:nVlzC8VTtrocY1BHIIbbI7A+znTUnXEwu82/38042Y8=:
+Signature-Input: sig1=("@method" "@authority" "@path" "content-digest");created=1783814400;keyid="payments-key-1";alg="ed25519"
+Signature: sig1=:mXGMjHD9A0lfOqKySifxgEDT41SvS5ycwpK5yOHciyXFONcSstrFi6wVAFx6CGqVTXoARcd2MD4NnLYYUUSmDw==:
+
+{"amount":900,"currency":"EUR","creditor":"acct-9912"}

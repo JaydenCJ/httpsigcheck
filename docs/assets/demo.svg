@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect width="760" height="500" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="380" y="27" fill="#8b949e" text-anchor="middle" font-size="12">httpsigcheck — the signature base, not just a verdict</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="58"><tspan fill="#7ee787">$</tspan> httpsigcheck verify --key … --now 1783814400 examples/signed-request.http</text>
+    <text x="24" y="84"><tspan fill="#79c0ff">httpsigcheck verify</tspan> — examples/signed-request.http</text>
+    <text x="24" y="102" fill="#8b949e">message: POST request for /payments, 5 header fields, 53-byte body</text>
+    <text x="24" y="128" fill="#d2a8ff">signature "sig1"</text>
+    <text x="24" y="146" fill="#8b949e">  signature base:</text>
+    <text x="24" y="164">    <tspan fill="#30363d">|</tspan> "@method": POST</text>
+    <text x="24" y="182">    <tspan fill="#30363d">|</tspan> "@authority": api.example.test</text>
+    <text x="24" y="200">    <tspan fill="#30363d">|</tspan> "@path": /payments</text>
+    <text x="24" y="218">    <tspan fill="#30363d">|</tspan> "content-digest": sha-256=:nVlzC8VTtroc…42Y8=:</text>
+    <text x="24" y="236">    <tspan fill="#30363d">|</tspan> "@signature-params": ("@method" "@authority" "@path" "content-digest");…</text>
+    <text x="24" y="262" fill="#8b949e">  checks:</text>
+    <text x="24" y="280">    base       <tspan fill="#7ee787">ok</tspan>    reconstructed: 4 component lines + @signature-params</text>
+    <text x="24" y="298">    alg        <tspan fill="#7ee787">ok</tspan>    ed25519 (from the alg signature parameter)</text>
+    <text x="24" y="316">    created    <tspan fill="#7ee787">ok</tspan>    2026-07-12T00:00:00Z (0 s ago)</text>
+    <text x="24" y="334">    signature  <tspan fill="#7ee787">ok</tspan>    64-byte signature verifies over the 265-byte base</text>
+    <text x="24" y="352">    body       <tspan fill="#7ee787">ok</tspan>    signature covers content-digest, binding the body</text>
+    <text x="24" y="378" fill="#d2a8ff">content-digest:</text>
+    <text x="24" y="396">  sha-256  <tspan fill="#7ee787">ok</tspan>    matches the body (53 bytes)</text>
+    <text x="24" y="422">verify: <tspan fill="#7ee787">PASS</tspan> (1 of 1 signature valid)</text>
+    <text x="24" y="456"><tspan fill="#7ee787">$</tspan> httpsigcheck verify --key … --now 1783814400 examples/tampered-request.http</text>
+    <text x="24" y="480">  sha-256  <tspan fill="#f778ba">FAIL</tspan>  body (54 bytes) hashes to a different value — <tspan fill="#f778ba">content was modified</tspan></text>
+  </g>
+</svg>
